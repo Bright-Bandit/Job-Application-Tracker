@@ -1,10 +1,12 @@
 package com.YuHao.jobtracker.entity;
 
 import jakarta.persistence.*;
+import org.springframework.cglib.core.Local;
+
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "job_db", schema = "job")
+@Table(name = "application", schema = "job")
 public class Application{
 
     @Id
@@ -18,7 +20,7 @@ public class Application{
     @Column(name = "status")
     private String status;
 
-    @Column(name = "note")
+    @Column(name = "notes")
     private String note;
 
     @Column(name = "skill")
@@ -31,7 +33,7 @@ public class Application{
     private String company;
 
     @Column(name = "interview")
-    private String interview;
+    private LocalDate interview;
 
     @Column(name = "deadline")
     private LocalDate deadline;
@@ -112,11 +114,11 @@ public class Application{
         this.deadline = deadline;
     }
 
-    public String getInterview() {
+    public LocalDate getInterview() {
         return interview;
     }
 
-    public void setInterview(String interview) {
+    public void setInterview(LocalDate interview) {
         this.interview = interview;
     }
 }
